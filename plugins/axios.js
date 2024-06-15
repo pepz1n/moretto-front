@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default defineNuxtPlugin(() => {
-  const domain = 'http://localhost:3232/'
+  const domain = 'http://localhost:3333/'
 
   let api = axios.create({
     baseURL: domain,
@@ -19,10 +19,11 @@ export default defineNuxtPlugin(() => {
   });
 
   api.interceptors.request.use((req) => {
-    const token = localStorage.getItem('token');
     if (process.client) {
-
+      const token = localStorage.getItem('token');
+      req.headers.Authorization = token;
     }
+    return req
   })
 
   return {
