@@ -133,22 +133,11 @@ export default {
       this.atividade = {
         id: null,
         nome: null,
-        dataInicio: null,
-        dataFim: null,
-        local: null,
-        idEvento: null
+        nomeCompleto: null,
+        email: null,
+        cpfCnpj: null,
       }
       this.ativo = false;
-    },
-
-    async persist() {
-      if (this.atividade.id) {
-        const response = await this.$api.post(`/atividade/persist/${this.atividade.id}`, this.atividade);
-      } else {
-        const response = await this.$api.post('/atividade/persist', this.atividade);
-      }
-      this.resetAtividade()
-      await this.getItems();
     },
 
     viewItem(item) {
@@ -158,22 +147,8 @@ export default {
       this.ativo = true;
     },
 
-    async deleteItem(item) {
-      if (confirm(`Deseja deletar o registro com id ${item.id}`)) {
-        const response = await this.$api.post('/atividade/destroy'  );
-        if (response.type == 'error') {
-          this.$toast.error('Erro ao excluir')
-        } else {
-          this.$toast.success('Excluido com sucesso')
-        }
-      }
-      await this.getItems();
-    },
 
     async getItems() {
-/**
-*
-*/
       const response = await this.$api.get('/usuario');
       this.items = response.data;
       this.loading = false;
