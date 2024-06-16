@@ -50,6 +50,11 @@ export default {
           to: '/public/'
         },
         {
+          nome: 'Favoritos',
+          icon: 'mdi-star',
+          to: '/favoritos'
+        },
+        {
           nome: 'Admin | Produtos',
           icon: 'mdi-cart',
           to: '/admin/produto'
