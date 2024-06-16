@@ -152,7 +152,7 @@ export default {
 
     async deleteItem(item) {
       try {
-        if (confirm(`Deseja deletar o registro com id ${item.id}`)) {
+        if (confirm(`Deseja deletar o registro com id ${item.id}?`)) {
           const response = await this.$api.delete(`/favoritos/${item.id}`  );
           this.$toast.success('Excluido com sucesso')
         }
@@ -164,7 +164,12 @@ export default {
 
     async getItems() {
       const response = await this.$api.get('/favoritos');
-      const favoritos = response.data;
+      let favoritos = response.data;
+      
+      favoritos = favoritos.filter(favorito => {
+        const produto = this.items2.find(p => p.id === favorito.idProduto);
+        return produto && produto.nome && produto.nome.trim() !== '';
+      });
 
       this.items = favoritos.map(favorito => {
         const produto = this.items2.find(p => p.id === favorito.idProduto);
