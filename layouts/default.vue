@@ -21,6 +21,7 @@
           <v-list-item prepend-icon="mdi-account" to="/usuarios" title="Usuarios" value="shared"></v-list-item>
           <v-list-item prepend-icon="mdi-account-box-multiple" to="/perfil" title="Perfis" value="starred"></v-list-item>
           <v-list-item prepend-icon="mdi-cart" to="/produto" title="Produtos" value="starred"></v-list-item>
+          <v-list-item prepend-icon="mdi-star" to="/favoritos" title="Favoritos" value="starred"></v-list-item>
         </v-list>
       </v-navigation-drawer>
       <v-main style="height: 100vh; background-color: black;" theme="dark">

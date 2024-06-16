@@ -14,7 +14,7 @@
         <v-row>
           <v-col cols="10">
             <h1>
-              Visualizar um Usuarios
+              Visualizar um Usuario
             </h1>
           </v-col>
           <v-col class="d-flex justify-end" >
