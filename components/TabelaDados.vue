@@ -9,6 +9,7 @@
       <v-tooltip color="green" text="Clique para adicionar um registro">
         <template v-slot:activator="{ props }">
           <v-btn
+            v-if="criarBool"
             fab
             v-bind="props"
             small
@@ -56,8 +57,18 @@
 
         <template v-slot:item.actions="{ item }">
           <v-icon
+              class="me-2"
+              size="small"
+              v-if="viewBool"
+              color="blue"
+              @click="viewItem(item)"
+          >
+            mdi-magnify
+          </v-icon>
+          <v-icon
             class="me-2"
             size="small"
+            v-if="editBool"
             @click="editItem(item)"
           >
             mdi-pencil
@@ -65,6 +76,7 @@
           <v-icon
             size="small"
             color="error"
+            v-if="deleteBool"
             @click="deleteItem(item)"
           >
             mdi-delete
@@ -90,7 +102,23 @@ export default {
     },
     titulo: {
       type: String
-    }
+    },
+    criarBool: {
+      type: Boolean,
+      default: true,
+    },
+    editBool: {
+      type: Boolean,
+      default: true,
+    },
+    deleteBool: {
+      type: Boolean,
+      default: true,
+    },
+    viewBool: {
+      type: Boolean,
+      default: false
+    },
   },
 
   methods: {
@@ -99,6 +127,9 @@ export default {
     },
     editItem(item) {
       this.$emit('editItem', item)
+    },
+    viewItem(item) {
+      this.$emit('viewItem', item)
     },
     abrirDialog(){
       this.$emit('abrirDialog');
