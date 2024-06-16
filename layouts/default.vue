@@ -11,17 +11,18 @@
             prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg"
             subtitle="sandra_a88@gmailcom"
             title="Sandra Adams"
-          ></v-list-item>
+          />
         </v-list>
 
         <v-divider></v-divider>
 
         <v-list density="compact" nav>
-          <v-list-item prepend-icon="mdi-home" to="/" title="Home" value="starred"></v-list-item>
-          <v-list-item prepend-icon="mdi-account" to="/usuarios" title="Usuarios" value="shared"></v-list-item>
-          <v-list-item prepend-icon="mdi-account-box-multiple" to="/perfil" title="Perfis" value="starred"></v-list-item>
-          <v-list-item prepend-icon="mdi-cart" to="/produto" title="Produtos" value="starred"></v-list-item>
-          <v-list-item prepend-icon="mdi-star" to="/favoritos" title="Favoritos" value="starred"></v-list-item>
+          <v-list-item prepend-icon="mdi-home" to="/" title="Home" value="1"></v-list-item>
+          <v-list-item prepend-icon="mdi-account" to="/usuarios" title="Usuarios" value="2"></v-list-item>
+          <v-list-item prepend-icon="mdi-account-box-multiple" to="/perfil" title="Perfis" value="3"></v-list-item>
+          <v-list-item prepend-icon="mdi-cart" to="/produto" title="Produtos" value="4"></v-list-item>
+          <v-list-item prepend-icon="mdi-star" to="/favoritos" title="Favoritos" value="5"></v-list-item>
+          <v-list-item prepend-icon="mdi-percent" to="/promocoes" title="Promoções" value="6"></v-list-item>
         </v-list>
       </v-navigation-drawer>
       <v-main style="height: 100vh; background-color: black;" theme="dark">
