@@ -63,6 +63,9 @@
 </template>
 
 <script>
+definePageMeta({
+  layout: "admin"
+})
 export default {
   data: () => {
     return {
