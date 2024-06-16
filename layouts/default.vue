@@ -48,6 +48,12 @@ export default {
           icon: 'mdi-home',
           to: '/public/ '
         },
+        {
+          nome: 'Favoritos',
+          icon: 'mdi-star',
+          to: '/favoritos'
+        },
+
       ]
     }
   },
