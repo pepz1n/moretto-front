@@ -50,9 +50,9 @@ export default {
           to: '/public/'
         },
         {
-          nome: 'Favoritos',
+          nome: 'Admin | Favoritos',
           icon: 'mdi-star',
-          to: '/favoritos'
+          to: '/admin/favoritos'
         },
         {
           nome: 'Admin | Produtos',
@@ -90,7 +90,7 @@ export default {
       try {
         const data = await this.$api.get('/usuario/get-info-by-token');
         this.userData = data.data;
-        if (!data.data.cargo == 'Admin') {
+        if (!(data.data.cargo == 'Admin')) {
           this.$toast.error('Acesso nao Permitido!')
           return this.$router.push('/')
         }

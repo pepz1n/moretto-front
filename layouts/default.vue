@@ -48,17 +48,6 @@ export default {
           icon: 'mdi-home',
           to: '/public/ '
         },
-        {
-          nome: 'Favoritos',
-          icon: 'mdi-star',
-          to: '/favoritos'
-        },
-        {
-          nome: 'percent',
-          icon: 'mdi-percent',
-          to: '/percent'
-        },
-
       ]
     }
   },
@@ -78,6 +67,13 @@ export default {
         if (data.data.cargo == 'Admin') {
           this.dados.push(
             {
+              nome: 'Admin | Favoritos',
+              icon: 'mdi-star',
+              to: '/admin/favoritos'
+            },
+          );
+          this.dados.push(
+            {
               nome: 'Admin | Usuarios',
               icon: 'mdi-account',
               to: '/admin/usuarios'
@@ -90,22 +86,22 @@ export default {
               to: '/admin/perfil'
             },
           )
-        }
         this.dados.push(
           {
             nome: 'Admin | Produtos',
-            icon: 'mdi-cart',
-            to: '/admin/produto'
-          },
+          icon: 'mdi-cart',
+        to: '/admin/produto'
+      },
         );
         this.dados.push(
           {
             nome: 'Admin | Promocoes',
-            icon: 'mdi-sale',
-            to: '/admin/promocoes'
-          },
-        );
-      } catch (e) {
+          icon: 'mdi-sale',
+        to: '/admin/promocoes'
+      },
+    );
+  }
+  } catch (e) {
         this.$toast.error('Acesso nao Permitido!')
         this.$router.push('/')
       }
