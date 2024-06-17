@@ -91,14 +91,20 @@ export default {
             },
           )
         }
-
         this.dados.push(
           {
             nome: 'Admin | Produtos',
             icon: 'mdi-cart',
             to: '/admin/produto'
           },
-        )
+        );
+        this.dados.push(
+          {
+            nome: 'Admin | Promocoes',
+            icon: 'mdi-sale',
+            to: '/admin/promocoes'
+          },
+        );
       } catch (e) {
         this.$toast.error('Acesso nao Permitido!')
         this.$router.push('/')

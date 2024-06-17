@@ -69,6 +69,11 @@ export default {
           icon: 'mdi-account',
           to: '/admin/usuarios'
         },
+        {
+          nome: 'Admin | Promocoes',
+          icon: 'mdi-sale',
+          to: '/admin/promocoes'
+        },
       ]
     }
   },
