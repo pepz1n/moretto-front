@@ -53,6 +53,11 @@ export default {
           icon: 'mdi-star',
           to: '/favoritos'
         },
+        {
+          nome: 'percent',
+          icon: 'mdi-percent',
+          to: '/percent'
+        },
 
       ]
     }
