@@ -63,6 +63,9 @@
 </template>
 
 <script>
+definePageMeta({
+  layout: 'admin'
+})
 export default {
   data: () => {
     return {
@@ -165,7 +168,7 @@ export default {
     async getItems() {
       const response = await this.$api.get('/favoritos');
       let favoritos = response.data;
-      
+
       favoritos = favoritos.filter(favorito => {
         const produto = this.items2.find(p => p.id === favorito.idProduto);
         return produto && produto.nome && produto.nome.trim() !== '';
@@ -181,7 +184,7 @@ export default {
 
       this.loading = false;
     },
-    
+
     async getProdutos() {
       const response = await this.$api.get('/produto');
       this.items2 = response.data;
